@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stylish Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      color: #fff;
+    }
+    header {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: radial-gradient(circle, #0f3460, #16213e);
+    }
+    header h1 {
+      font-size: 3rem;
+      font-weight: 600;
+      animation: fadeIn 2s ease-in-out;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      animation: fadeIn 3s ease-in-out;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.8);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      z-index: 1000;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: 300;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #00f5d4;
+    }
+    section {
+      padding: 6rem 2rem;
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .project {
+      background: #0f3460;
+      padding: 2rem;
+      border-radius: 1rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .project:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 30px rgba(0,0,0,0.3);
+    }
+    .contact {
+      text-align: center;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #000;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div><strong>MyPortfolio</strong></div>
+    <div>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+  
+  <header>
+    <h1>Hi, I'm Alex</h1>
+    <p>Creative Developer & Designer</p>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I build stylish and interactive websites with stunning animations and clean code.</p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project">
+        <h3>Project One</h3>
+        <p>A stunning web app built with HTML, CSS, and JavaScript.</p>
+      </div>
+      <div class="project">
+        <h3>Project Two</h3>
+        <p>A responsive portfolio site with dark mode and smooth scroll.</p>
+      </div>
+      <div class="project">
+        <h3>Project Three</h3>
+        <p>Interactive UI using vanilla JS and elegant animations.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <p>Feel free to reach out via email at <strong>alex@example.com</strong></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Alex | All rights reserved</p>
+  </footer>
+
+  <script>
+    // Smooth scroll polyfill for older browsers
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>
